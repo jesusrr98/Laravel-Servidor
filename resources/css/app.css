@@ -1,0 +1,30 @@
+#inicio {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(180, 213, 243);
+    border-radius: 20px;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(135, 196, 253);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form input{
+    margin-bottom: 10px;
+}
+
+form span{
+    display: flex;
+    justify-content: center;
+}
