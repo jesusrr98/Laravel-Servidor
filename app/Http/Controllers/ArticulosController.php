@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Articulo;
 
 class ArticulosController extends Controller
 {
@@ -14,7 +15,8 @@ class ArticulosController extends Controller
     public function index()
     {
         //
-        return view("articulos.index");
+        $articulos = Articulo::all();
+        return view("articulos.index")->with(compact("articulos"));
     }
 
     /**
@@ -25,6 +27,7 @@ class ArticulosController extends Controller
     public function create()
     {
         //
+        return view("articulos.insert");
     }
 
     /**
@@ -36,6 +39,15 @@ class ArticulosController extends Controller
     public function store(Request $request)
     {
         //
+
+        $articulo = new Articulo;
+        $articulo->nombre = $request->nombre;
+        $articulo->precio = $request->precio;
+        $articulo->seccion = $request->seccion;
+        $articulo->paisOrigen = $request->paisOrigen;
+        $articulo->save();
+
+        return redirect("articulos");
     }
 
     /**
@@ -47,6 +59,9 @@ class ArticulosController extends Controller
     public function show($id)
     {
         //
+        $articulo = Articulo::findOrFail($id);
+        
+        return view("articulos.update", compact("articulo"));
     }
 
     /**
@@ -58,6 +73,7 @@ class ArticulosController extends Controller
     public function edit($id)
     {
         //
+        
     }
 
     /**
@@ -70,6 +86,11 @@ class ArticulosController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $articulo = Articulo::find($id);
+
+        $articulo->update($request->all());
+
+        return redirect("articulos");
     }
 
     /**
@@ -81,5 +102,10 @@ class ArticulosController extends Controller
     public function destroy($id)
     {
         //
+        $articulo = Articulo::find($id);
+
+        $articulo->delete();
+
+        return redirect("articulos");
     }
 }

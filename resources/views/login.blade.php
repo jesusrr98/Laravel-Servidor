@@ -8,6 +8,8 @@
 </head>
 <body>
 
+    <?php $error = Session::get('error'); ?>
+
     @isset($error)
 
         <script type="text/javascript">

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Articulo;
 
 class LoginController extends Controller
 {
@@ -17,14 +18,20 @@ class LoginController extends Controller
         ]);
 
         if(Auth::attempt($datos)){
+
+            $usuario = Auth::user();
+            $articulos = Articulo::all();
             
-            return redirect("articulos");
+            return redirect()->route('articulos.index')->with([
+                "usuario" => $usuario,
+                "articulos" => $articulos
+            ]);
 
         }
 
         $error = "Login Incorrecto";
 
-        return view("login")->with(compact("error"));
+        return redirect()->route('/')->with( ['error' => $error] );
 
     }
 }

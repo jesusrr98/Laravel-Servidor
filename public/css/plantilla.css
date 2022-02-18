@@ -1,0 +1,36 @@
+#titulo{
+    font-size: 40px;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-style: italic;
+    text-decoration: underline;
+}
+
+#filaTitulo, #filaPie{
+    background-color: cornflowerblue;
+    padding: 10px;
+}
+
+#pie {
+    font-size: 10px;
+    text-align: center;
+}
+
+table{
+    width: 600px;
+}
+
+#tabla{
+    display: flex;
+    justify-content: center;
+}
+
+td, th {
+    padding: 10px;
+    text-align: center;
+}
+
+#mensaje {
+    text-align: center;
+}
+

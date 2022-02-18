@@ -17,13 +17,12 @@ use App\Http\Controllers\LoginController;
 
 Route::get('/', function () {
     return view('login');
-});
-
+})->name("/");
 
 
 Route::resource("/articulos", ArticulosController::class);
-
 Route::post('/login', [LoginController::class, 'autentificar'])->name('login');
+
 Route::get('/login', function () {
     return view('login');
 });
