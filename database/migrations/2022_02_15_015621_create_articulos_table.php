@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use App\Models\Articulo;
 
 return new class extends Migration
 {
@@ -22,6 +23,26 @@ return new class extends Migration
             $table->timestamps();
         });
 
+        Articulo::create([
+            "nombre" => "Pantalon",
+            "precio" => 23.5,
+            "seccion" => "Ropa",
+            "paisOrigen" => "España"
+        ]);
+
+        Articulo::create([
+            "nombre" => "Jarron",
+            "precio" => 80,
+            "seccion" => "Cerámica",
+            "paisOrigen" => "China"
+        ]);
+
+        Articulo::create([
+            "nombre" => "Portatil",
+            "precio" => 540,
+            "seccion" => "Informática",
+            "paisOrigen" => "España"
+        ]);
         
     }
 

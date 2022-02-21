@@ -6,8 +6,8 @@
 
 
 
-<div class="col" style="display:flex; justify-content: center;">
-    <form style="width:600px; display: flex;flex-direction:column; align-items: center;" method="POST" action="/articulos">
+<div id="fondoInsert" class="col d-flex flex-column align-items-center justify-content-center h-75">
+    <form style="width:300px; display: flex;flex-direction:column; align-items: center;" method="POST" action="/articulos">
 
         @csrf
 

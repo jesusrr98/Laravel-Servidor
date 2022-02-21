@@ -1,6 +1,6 @@
 @extends("./layouts.plantilla")
 
-@section("titulo", "Crear Articulo")
+@section("titulo", "Modificar Articulo")
 
 @section("cuerpo")
 
@@ -8,8 +8,8 @@
 
 @if(isset($articulo))
 
-    <div class="col" style="display:flex; justify-content: center;">
-        <form style="width:600px; display: flex;flex-direction:column; align-items: center;" method="POST" action="/articulos/{{$articulo->id}}">
+    <div id="fondoUpdate" class="col d-flex flex-column align-items-center justify-content-center  h-75">
+        <form style="width:300px; display: flex;flex-direction:column; align-items: center;" method="POST" action="/articulos/{{$articulo->id}}">
 
             @method('PUT')
             @csrf
